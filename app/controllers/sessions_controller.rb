@@ -13,18 +13,17 @@ class SessionsController < ApplicationController
       render :new
     elsif @user.password == params[:user][:password]
       session[:user_id] = @user.id
-      redirect_to @user
+      #redirect_to @user
+      redirect_to user_url(@user)
     else #password doesn't match given user object
       flash.now[:error] = 'Invalid email/password combination'
       @user = User.new(params[:user])
       render :new
     end
-
   end
 
   def destroy
-    session[:user_id] = nil
-
-    redirect_to users_url
+    session.delete(:user_id)
+    redirect_to new_session_url #redirect to sign_in?
   end
 end

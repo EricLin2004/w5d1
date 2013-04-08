@@ -1,2 +1,5 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %></h1>
+
+<p>Hello, <%= @user.name %>! How are you today?</p>
+
+<%= link_to "Log out", session_url(@user.id), :method => :delete %>
