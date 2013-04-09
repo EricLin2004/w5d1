@@ -10,7 +10,6 @@ class CartsController < ApplicationController
 
     new_cart = Hash.new(0)
 
-# REV: Might be worth refactoring the two cart_update loops together
     cart_updates.each do |key, value|
       if prev_cart.keys.include?(key)
         new_cart[key] = prev_cart[key] + value.to_i
