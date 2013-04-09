@@ -124,6 +124,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   jquery-rails
+  json
   pry-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

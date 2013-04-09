@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       render :new
     elsif @user.password == params[:user][:password]
       session[:user_id] = @user.id
+      session[:cart] = {}.to_json
       #redirect_to @user
       redirect_to user_url(@user)
     else #password doesn't match given user object

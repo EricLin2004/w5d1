@@ -1,0 +1,14 @@
+<h1> Products </h1>
+
+<%= form_for(:cart, :method => :put, :url => cart_url) do |f| %>
+  <% @products.each do |prod| %>
+    <%= f.label prod.name %>
+    <%= f.number_field prod.name %>
+    <br>
+  <% end %>
+
+  <%= f.submit "Update Cart" %>
+
+<% end %>
+
+<%= link_to "Shopping Cart", cart_url%>
