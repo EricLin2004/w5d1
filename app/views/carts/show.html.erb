@@ -2,6 +2,8 @@
 
   <ul>
   <% @cart.each do |name, amount| %>
+  <!-- REV: I think there is a pluralize function in rails that you could use
+            I believe its pluralize(quantity, item name) -->
     <li><%= amount %> <%= name %>(s)</li>
   <% end %>
   </ul>
